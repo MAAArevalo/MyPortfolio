@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Lekton-Bold';
-  src: url('/assets/fonts/Lekton-bold.woff2') format('woff2'),
-       url('/assets/fonts/Lekton-bold.woff') format('woff');
+  src: url('../fonts/Lekton-Bold.woff2') format('woff2'),
+       url('../fonts/Lekton-Bold.woff') format('woff');
   font-display: swap;
 }
 @font-face {
@@ -271,6 +271,7 @@ section#works {
 }
 .work-cta {
     display: flex;
+    gap: 10px;
 }
 
 .work-cta a {
