@@ -42,7 +42,6 @@ h1,h2,h3,h4,h5,h6{
 .body-container {
     width: 100%;
     display: flex;
-    height: 100vh;
 }
 nav#side-nav {
     width: 15%;
@@ -52,6 +51,9 @@ nav#side-nav {
     display: flex;
     flex-direction: column;
     box-shadow: 0 0 13px 0 rgba(113, 111, 111, 0.25);
+    height: 100vh;
+    position: sticky;
+    top: 0;
 }
 .profile-img {
     display: flex;
@@ -61,13 +63,14 @@ nav#side-nav {
     text-align: center;
     margin-bottom: 32px;
 }
-.profile-img img{
+.profile-img img {
     width: 100%;
     max-width: 100px;
-    height: 100px;
+    height: 100%;
     border-radius: 50%;
     margin: 0 auto;
     margin-bottom: 16px;
+    min-width: 80px;
 }
 .nav-list {
     flex-grow: 1;
@@ -263,12 +266,8 @@ section#works {
     border: none;
     transform: translate(calc(-100% + -43px), -50%);
 }
-.work-list-items h2 {
-    margin-bottom: 20px;
-}
-.work-types {
-    margin-bottom: 20px;
-}
+.work-list-items h2 { margin-bottom: 20px; }
+.work-types { margin-bottom: 20px; }
 .work-cta {
     display: flex;
     gap: 10px;
@@ -281,6 +280,39 @@ section#works {
     border: 1px solid var(--black-primary);
     padding: 5px 10px;
 }
-.work-cta svg {
-    width: 20px;
+.work-cta svg { width: 20px; }
+
+@media only screen and (max-width: 991.5px){
+    section.portfolio-content { height: 90vh; }
+    section.hero {
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+    section.hero h1 { font-size: 3rem; }
+    section.hero h2 { font-size: 5rem; }
+    .work-lists { display: none; }
+    .body-container { flex-direction: column-reverse; }
+    nav#side-nav {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+        flex-direction: row;
+        height: 10vh;
+        top: auto;
+        bottom: 0;
+        z-index: 9;
+    }
+    .profile-img { display: none; }
+    .nav-list { flex-direction: row-reverse; }
+    .nav-list ul { flex-direction: row; }
+    .top-items {
+        gap: 20px;
+        position: sticky;
+        top: 30px;
+        padding: 0 50px;
+        z-index: 9;
+        background: #fff8;
+    }
+
 }

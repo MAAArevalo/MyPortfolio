@@ -24,7 +24,7 @@
             </div>
         </div>
     </div>
-    <?php //get_template_part( 'template-parts/section-hero' ); ?>
+    <?php get_template_part( 'template-parts/section-hero' ); ?>
     <?php get_template_part( 'template-parts/section-works' ); ?>
 </div>
 <?php get_footer(); ?>
