@@ -1,6 +1,6 @@
 <?php
 
-//Theme Setup
+/* Theme Setup */
 function rei_theme_setup() {
   add_theme_support('title-tag');
   add_theme_support('post-thumbnails');
@@ -10,20 +10,20 @@ function rei_theme_setup() {
 
 add_action('after_setup_theme', 'rei_theme_setup');
 
-//Enqueue Assets
+/* Enqueue Assets */
 function rei_enqueue_assets() {
   // Styles
   wp_enqueue_style('rei-style', get_stylesheet_uri());
   wp_enqueue_style('custom-css', get_template_directory_uri() . '/assets/css/main.css');
 
   // Scripts
-  wp_enqueue_script('gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js', [], null, true);
-  wp_enqueue_script('scroll-trigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js', ['gsap'], null, true);
-  wp_enqueue_script('rei-script', get_template_directory_uri() . '/assets/js/main.js', ['scroll-trigger'], null, true);
+  //wp_enqueue_script('gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js', [], null, true);
+  //wp_enqueue_script('scroll-trigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js', ['gsap'], null, true);
+  wp_enqueue_script('rei-script', get_template_directory_uri() . '/assets/js/main.js', ['jquery'], null, true);
 }
 add_action('wp_enqueue_scripts', 'rei_enqueue_assets');
 
-//Register Custom Post for Works
+/* Register Custom Post for Works*/
 function rei_register_myworks_cpt() {
   register_post_type( 'my-work', array(
       'labels'      => array(
@@ -95,3 +95,21 @@ function save_fields($post_id){
   endif;
 }
 add_action( 'save_post', 'save_fields' );
+
+
+/* Projects Ajax Update Work Preview */
+
+add_action("wp_ajax_nopriv_update_work_preview", "update_work_preview");
+add_action("wp_ajax_update_work_preview", "update_work_preview");
+
+function update_work_preview(){
+  $workid = $_POST['workid'];
+  $start = microtime(true);
+
+  echo "test";
+  echo $workid;
+  
+  $end = microtime(true);
+  echo " | Loaded in: " . round($end - $start, 3) . "s";
+  exit;
+}
