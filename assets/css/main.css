@@ -282,6 +282,129 @@ section#works {
 }
 .work-cta svg { width: 20px; }
 
+section#tech {
+    display: flex;
+    align-items: center;
+}
+.tech-title {
+    width: 100%;
+    max-width: 300px;
+}
+.tech-logos {
+    position: relative;
+}
+.tech-logos {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: auto;
+}
+.main-tech-logo {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.tech-content {
+    flex: 1;
+    height: 100%;
+}
+.tech-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.main-tech-logo > div.tech-logo {
+    max-width: 180px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.tech-container .tech-logo {
+    position: absolute;
+}
+.tech-container > .tech-logo:first-child{
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+.tech-container > .tech-logo:nth-child(2){
+    right: 0;
+    top: 0;
+    transform: translate(50%, -50%);
+}
+.tech-container > .tech-logo:nth-child(3){
+    bottom: 0;
+    left: 0;
+    transform: translate(-50%, 50%);
+}
+.tech-container > .tech-logo:last-child{
+    bottom: 0;
+    right: 0;
+    transform: translate(50%, 50%);
+}
+
+.second-rotate {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.second-tech-logo.tech-container {
+    transform: rotate(45deg);
+}
+.second-tech-logo.tech-container > .tech-logo {
+    transform: rotate(-45deg);
+}
+
+.second-tech-logo.tech-container > .tech-logo:first-child {
+    transform: rotate(-45deg) translate(0, -50%);
+}
+.second-tech-logo.tech-container > .tech-logo:nth-child(2) {
+    transform: rotate(-45deg) translate(50%, 0);
+}
+.second-tech-logo.tech-container > .tech-logo:nth-child(3) {
+    transform: rotate(-45deg) translate(-50%, 0);
+}
+.second-tech-logo.tech-container > .tech-logo:last-child {
+    transform: rotate(-45deg) translate(0, 50%);
+}
+
+.tech-logo img {
+    width: 100%;
+}
+
+.tech-container .tech-logo{
+    width: 100%;
+    max-width: 100px;
+}
+
+.first-tech-logo.tech-container .tech-logo {
+    animation: negrotate 20s linear infinite;
+}
+
+.second-tech-logo.tech-container .tech-logo img{
+    animation: negrotate 20s linear infinite;
+}
+
+.first-tech-logo.tech-container, .second-rotate{
+    animation: rotate 20s linear infinite;
+}
+
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@keyframes negrotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}
+
 @media only screen and (max-width: 991.5px){
     section.portfolio-content { height: 90vh; }
     section.hero {
