@@ -287,16 +287,15 @@ section#tech {
     align-items: center;
 }
 .tech-title {
-    width: 100%;
-    max-width: 300px;
+    width: 25%;
 }
 .tech-logos {
     position: relative;
 }
 .tech-logos {
     position: relative;
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     margin: auto;
 }
 .main-tech-logo {
@@ -305,7 +304,7 @@ section#tech {
     height: 100%;
 }
 .tech-content {
-    flex: 1;
+    width: 75%;
     height: 100%;
 }
 .tech-container {
@@ -317,7 +316,7 @@ section#tech {
 }
 
 .main-tech-logo > div.tech-logo {
-    max-width: 180px;
+    max-width: 130px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -380,7 +379,7 @@ section#tech {
 
 .tech-container .tech-logo{
     width: 100%;
-    max-width: 100px;
+    max-width: 80px;
 }
 
 .first-tech-logo.tech-container .tech-logo {
