@@ -6,8 +6,8 @@ require get_template_directory(  ) . '/inc/theme-setup.php';
 //Enqueque Assets
 require get_template_directory(  ) . '/inc/assets.php';
 
-//Register Work CPT
-require get_template_directory(  ) . '/inc/work-cpt.php';
+//Register CPT
+require get_template_directory(  ) . '/inc/register-cpt.php';
 
 //Add Fields to Work CPT
 require get_template_directory(  ) . '/inc/work-fields.php';
