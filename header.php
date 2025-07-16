@@ -17,11 +17,12 @@
                 <h3>WELCOME</h3>
             </div>
             <div class="nav-list">
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">My Works</a></li>
-                    <li><a href="">Tech & Tools</a></li>
-                    <li><a href="">Contact Me</a></li>
+                <ul class="section-links">
+                    <li><span data-target="#home">Home</span></li>
+                    <li><span data-target="#works">My Works</span></li>
+                    <li><span data-target="#tech">Tech & Tools</span></li>
+                    <li><span data-target="#work-exp">Work History/ Exp</span></li>
+                    <li><span data-target="">Contact Me</span></li>
                 </ul>
                 <div class="v-divider"></div>
                 <ul>

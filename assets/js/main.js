@@ -3,8 +3,46 @@ class ReiMain {
 
     constructor(){
         this.bindEvents();
+        this.contentScroll();
+    }
+    //BindEvents for window scroll
+    contentScroll() {
+        let prevPlace = 0; // pixel scroll position
+        let prevPlacing = 0; // section number
+
+        const secNum = jQuery(".content-container").find("section").length;
+        const windowHeight = jQuery(window).innerHeight();
+        const indicator = 30;
+
+        jQuery(window).on("scroll", () => {
+            const currentPlace = jQuery(window).scrollTop();
+
+            for (let win = 1; win <= secNum; win++) {
+            const secPosStart = windowHeight * (win - 1);
+            const secPosEnd = windowHeight * win;
+
+                if (currentPlace >= secPosStart && currentPlace < secPosEnd) {
+                    const currPlacing = win;
+
+                    if (currPlacing !== prevPlacing) {
+                        const topindicator = ((indicator * (currPlacing - 1)) * -1) + 'px';
+
+                        jQuery(".scroll-identifier-container")
+                            .stop(true, false)
+                            .animate({ top: topindicator }, 500);
+
+                        prevPlacing = currPlacing; // update section only AFTER animation
+                    }
+
+                    break; // exit loop once matched
+                }
+            }
+
+            prevPlace = currentPlace; // update scroll position AFTER loop
+        });
     }
 
+    //BindEvents for on click
     bindEvents(){
         jQuery(".work-list-items ul").on("click", "li", (e)=>{
             jQuery(".work-list-items ul li").removeClass("active");
@@ -17,6 +55,13 @@ class ReiMain {
             var the_id = jQuery(e.currentTarget).data("value");
             this.workupdate(the_id, "rei_update_exp_details_preview");
         });
+
+        jQuery(".section-links span").on("click", function () {
+            const target = jQuery(this).data("target"); // e.g., "#about"
+            const offset = jQuery(target).offset().top;
+
+            jQuery("html, body").animate({ scrollTop: offset }, 800);
+        });
     }
     workupdate(id, dataaction){
         jQuery.ajax({
@@ -25,10 +70,12 @@ class ReiMain {
 
             data: {action: dataaction, workid:id},
             success: function(data){
+                //If works
                 if(dataaction == "rei_update_work_preview"){
                     jQuery(".work-preview").html(data);
                     console.log(data);
                 }else{
+                    //Else Work Exp
                     jQuery(".work-exp-content").html(data);
                     console.log(data);
                 }
