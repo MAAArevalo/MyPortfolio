@@ -10,6 +10,7 @@
                 <span>HOME</span>
                 <span>WORKS</span>
                 <span>TECHS-TOOLS</span>
+                <span>HISTORY & EXP</span>
                 <span>CONTACT</span>
             </div>
         </div>
@@ -24,9 +25,9 @@
             </div>
         </div>
     </div>
-    <?php //get_template_part( 'template-parts/section-hero' ); ?>
-    <?php //get_template_part( 'template-parts/section-works' ); ?>
-    <?php //get_template_part( 'template-parts/section-techs' ); ?>
+    <?php get_template_part( 'template-parts/section-hero' ); ?>
+    <?php get_template_part( 'template-parts/section-works' ); ?>
+    <?php get_template_part( 'template-parts/section-techs' ); ?>
     <?php get_template_part( 'template-parts/section-workexp' ); ?>
 </div>
 <?php get_footer(); ?>
