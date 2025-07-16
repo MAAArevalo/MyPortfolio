@@ -55,3 +55,30 @@ function rei_register_workexp_cpt() {
 }
 
 add_action('init', 'rei_register_workexp_cpt');
+
+/* Register Custom Post for Tech Tools*/
+function rei_tech_tools_cpt() {
+  register_post_type( 'tech-tool', array(
+      'labels'      => array(
+          'name'          => __( 'Tech Tools', 'aa-my-portfolio' ),
+          'singular_name' => __( 'Tech Tool', 'aa-my-portfolio' ),
+          'menu_name'          => 'Tech Tools',
+          'name_admin_bar'     => 'Tech Tool',
+          'add_new'            => 'Add New',
+          'add_new_item'       => 'Add New Tech Tool',
+          'edit_item'          => 'Edit Tech Tool',
+          'new_item'           => 'New Tech Tool',
+          'view_item'          => 'View Tech Tool',
+          'search_items'       => 'Search Tech Tools',
+          'not_found'          => 'No Tech Tools found',
+          'not_found_in_trash' => 'No Tech Tools found in Trash',
+          'all_items'          => 'All Tech Tools',
+      ),
+      'public'      => true,
+      'has_archive' => true,
+      'supports' => ['title', 'thumbnail'],
+      'rewrite'     => array( 'slug' => 'tech-tool' ), // my custom slug
+  ) );
+}
+
+add_action('init', 'rei_tech_tools_cpt');
