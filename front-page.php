@@ -26,6 +26,7 @@
     </div>
     <?php //get_template_part( 'template-parts/section-hero' ); ?>
     <?php //get_template_part( 'template-parts/section-works' ); ?>
-    <?php get_template_part( 'template-parts/section-techs' ); ?>
+    <?php //get_template_part( 'template-parts/section-techs' ); ?>
+    <?php get_template_part( 'template-parts/section-workexp' ); ?>
 </div>
 <?php get_footer(); ?>
