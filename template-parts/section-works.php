@@ -78,7 +78,7 @@
             <h2>Projects List</h2>
             <ul>
                 <?php for($work = 0; $work < $projectCount; $work++): ?>
-                <li data-value="<?php echo esc_attr( $projectArray[$work] ); ?>" class="<?php echo $work == 0 ? "active" : ""; ?>"><?php echo get_the_title($projectArray[$work]); ?></li>
+                <li data-value="<?php echo esc_attr( $projectArray[$work] ); ?>" class="<?php echo $work == 0 ? "active" : ""; ?>"><span><?php echo get_the_title($projectArray[$work]); ?></span></li>
                 <?php endfor; ?>
             </ul>
         </div>

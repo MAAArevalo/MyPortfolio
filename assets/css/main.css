@@ -157,6 +157,10 @@ nav#side-nav {
     width: auto;
     background: var(--black-primary);
 }
+
+.menu-toggle {
+    display: none;
+}
 section.portfolio-content{
     overflow: hidden;
     height: 100vh;
@@ -343,9 +347,71 @@ div#work-exp-list > div > div.h-divider { margin-bottom: 20px; }
         text-align: center;
         align-items: center;
     }
+    h2, .work-exp-content h2{ font-size: 2rem !important; }
     section.hero h1 { font-size: 3rem; }
     section.hero h2 { font-size: 5rem; }
-    .work-lists { display: none; }
+    .work-list-items::before, .work-list-items::after { display: none; }
+.work-list-items ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+.work-list-items ul li {
+    width: 20px;
+    height: 20px;
+}
+.work-list-items ul li span {
+    display: none;
+}
+.work-list-items h2 {
+    display: none;
+}
+.work-list-items ul li:before, .work-list-items ul li.active:before, .work-list-items ul li:after, .work-list-items ul li.active:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 50%;
+    transform: none;
+    border: 1px solid var(--black-primary);
+}
+    .work-list-items ul li:after, .work-list-items ul li.active:after {
+        background: var(--mint-green);
+        width: 15px;
+        height: 15px;
+        border: none;
+        top: 50%;
+        transform: none;
+        left: 50%;
+        transform: translate(-45%, 25%);
+    }
+    .work-list-items ul li.active {
+    width: 50px;
+}
+    .work-list-items ul li.active:after {
+        background: var(--mint-green);
+        width: 39px;
+        height: 15px;
+        border: none;
+        top: 50%;
+        transform: none;
+        left: 50%;
+        transform: translate(-49%, 22%);
+    }
+    .work-preview-details {
+    max-width: fit-content;
+    margin: auto;
+}
+section#works {
+    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+}
+.work-list-items {
+    padding: 20px;
+}
     .body-container { flex-direction: column-reverse; }
     nav#side-nav {
         width: 100%;
@@ -362,15 +428,50 @@ div#work-exp-list > div > div.h-divider { margin-bottom: 20px; }
     .top-items {
         gap: 20px;
         position: sticky;
-        top: 30px;
+        top: 15px;
         padding: 0 50px;
         z-index: 9;
         background: #fff8;
     }
+    .scroll-identifier-container span {
+        font-size: 14px;    
+    }
+    .work-preview-img img {
+        max-width: 350px;
+        margin: 0 auto 30px;
+        display: block;
+    }
+    .content-container section { padding: 50px; }
+    .tech-logo img {
+        max-width: 50px;
+        height: 50px;
+    }
+    div#work-exp-list h2 { font-size: 1.5rem !important; }
+    div#work-exp-list, section#work-exp { gap: 20px; }
+    .work-exp-content { flex: 1; }
+    .resume-btn { padding: 5px 20px; font-size: 13px; }
 
 }
 
 @media only screen and (max-width: 768.5px){
     section#work-exp { flex-direction: column; }
     div#work-exp-list, .work-exp-content { max-width: 100%; }
+    ul.section-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: var(--light-gray);
+        padding: 20px;
+        transform: translateY(100%);
+        transition: 0.3s;
+        z-index: 2;
+    }
+    ul.section-links.active{
+        transform: translateY(-50%);
+    }
+    .menu-toggle { display: block; font-size: 35px; }
+    .top-items { padding: 0 20px; }
+    .resume-btn, .scroll-identifier-container span { font-size: 10px; }
 }
