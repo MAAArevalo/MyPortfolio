@@ -11,15 +11,19 @@ class ReiMain {
         let prevPlacing = 0; // section number
 
         const secNum = jQuery(".content-container").find("section").length;
-        const windowHeight = jQuery(window).innerHeight();
+        let sectionHeight = jQuery("section").outerHeight();
+        window.addEventListener("resize", function () {
+          sectionHeight = jQuery("section").outerHeight();
+        });
+
         const indicator = 30;
 
         jQuery(window).on("scroll", () => {
             const currentPlace = jQuery(window).scrollTop();
 
             for (let win = 1; win <= secNum; win++) {
-            const secPosStart = windowHeight * (win - 1);
-            const secPosEnd = windowHeight * win;
+            const secPosStart = sectionHeight * (win - 1);
+            const secPosEnd = sectionHeight * win;
 
                 if (currentPlace >= secPosStart && currentPlace < secPosEnd) {
                     const currPlacing = win;
@@ -62,6 +66,10 @@ class ReiMain {
 
             jQuery("html, body").animate({ scrollTop: offset }, 800);
         });
+
+        jQuery(".menu-toggle").on("click", function () {
+            jQuery("ul.section-links").toggleClass("active");
+        })
     }
     workupdate(id, dataaction){
         jQuery.ajax({
@@ -73,11 +81,9 @@ class ReiMain {
                 //If works
                 if(dataaction == "rei_update_work_preview"){
                     jQuery(".work-preview").html(data);
-                    console.log(data);
                 }else{
                     //Else Work Exp
                     jQuery(".work-exp-content").html(data);
-                    console.log(data);
                 }
             }
         });
