@@ -457,7 +457,6 @@ section#works {
     section#work-exp { flex-direction: column; }
     div#work-exp-list, .work-exp-content { max-width: 100%; }
     ul.section-links {
-        display: flex;
         flex-direction: column;
         position: absolute;
         bottom: 0;
@@ -467,13 +466,13 @@ section#works {
         transform: translateY(100%);
         transition: 0.3s;
         z-index: 2;
+        display: none;
     }
     ul.section-links.active{
         transform: translateY(-50%);
+        display: flex;
     }
     .menu-toggle { display: block; font-size: 35px; }
     .top-items { padding: 0 20px; }
     .resume-btn, .scroll-identifier-container span { font-size: 10px; }
-    .body-container { overflow: hidden; }
-    .container { overflow: hidden; }
 }
