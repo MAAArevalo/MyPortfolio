@@ -45,6 +45,9 @@ h1,h2,h3,h4,h5,h6{
     display: flex;
     overflow: hidden;
 }
+.container {
+    overflow: hidden;
+}
 nav#side-nav {
     width: 15%;
     max-width: 200px;
