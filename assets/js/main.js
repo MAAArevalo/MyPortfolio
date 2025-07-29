@@ -4,6 +4,7 @@ class ReiMain {
     constructor(){
         this.bindEvents();
         this.contentScroll();
+        this.owlcarousel();
     }
     //BindEvents for window scroll
     contentScroll() {
@@ -88,7 +89,24 @@ class ReiMain {
             }
         });
     }
-
+    owlcarousel(){
+        jQuery('.owl-carousel').owlCarousel({
+            loop:true,
+            margin:10,
+            nav:true,
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:3
+                },
+                1000:{
+                    items:5
+                }
+            }
+        })
+    }
 }
 
 jQuery(() => new ReiMain);
