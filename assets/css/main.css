@@ -450,6 +450,17 @@ section#works {
     .hide-tablet {
         display: none;
     }
+    .owl-dots {
+        display: flex;
+        justify-content: center;
+    }
+    button.owl-dot {
+        width: 20px;
+        height: 20px;
+        background: var(--mint-green) !important;
+        border-radius: 50%;
+        margin: 5px;
+    }
     .content-container section { padding: 50px; }
     .tech-logo img {
         max-width: 50px;
