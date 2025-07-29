@@ -43,10 +43,6 @@ h1,h2,h3,h4,h5,h6{
 .body-container {
     width: 100%;
     display: flex;
-    overflow: hidden;
-}
-.container {
-    overflow: hidden;
 }
 nav#side-nav {
     width: 15%;
@@ -478,4 +474,6 @@ section#works {
     .menu-toggle { display: block; font-size: 35px; }
     .top-items { padding: 0 20px; }
     .resume-btn, .scroll-identifier-container span { font-size: 10px; }
+    .body-container { overflow: hidden; }
+    .container { overflow: hidden; }
 }
